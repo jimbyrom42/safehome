@@ -5,6 +5,8 @@
  */
 package safehomejf;
 
+import javax.swing.JSlider;
+
 /**
  *
  * @author Benedict
@@ -27,32 +29,179 @@ public class Thermostat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        TBack = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        OTemp = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        MSlider = new javax.swing.JSlider();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        MainTemp = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        MTempLabel = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        canvas1 = new java.awt.Canvas();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(400, 150));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Thermostat - Coming Soon");
+        TBack.setText("Back");
+        TBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBackMouseClicked(evt);
+            }
+        });
+        TBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(327, 327, 327)
-                .addComponent(jLabel1)
-                .addContainerGap(296, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel1)
-                .addContainerGap(288, Short.MAX_VALUE))
-        );
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("F");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 20, 30));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Clear");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 40, 20));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("o");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, 10, 20));
+
+        OTemp.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        OTemp.setForeground(new java.awt.Color(255, 255, 255));
+        OTemp.setText("81");
+        getContentPane().add(OTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 120, 140));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/icon3.png"))); // NOI18N
+        jLabel11.setText("Fan Mode");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 130, 40));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/outside temp.png"))); // NOI18N
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/heat.png"))); // NOI18N
+        jLabel13.setText("Heating");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, -1, -1));
+
+        MSlider.setMaximum(86);
+        MSlider.setMinimum(60);
+        MSlider.setValue(73);
+        MSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                MSliderStateChanged(evt);
+            }
+        });
+        getContentPane().add(MSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 240, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/cool.png"))); // NOI18N
+        jLabel6.setText("Cooling");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("F");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 30, 30));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("o");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 30, 30));
+
+        MainTemp.setFont(new java.awt.Font("Tahoma", 1, 90)); // NOI18N
+        MainTemp.setForeground(new java.awt.Color(255, 255, 255));
+        MainTemp.setText("72");
+        getContentPane().add(MainTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 140));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Outside Temperature");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 160, 20));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/icon4.png"))); // NOI18N
+        jLabel8.setText("Air Cleaner");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 150, -1));
+
+        MTempLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        MTempLabel.setForeground(new java.awt.Color(255, 255, 255));
+        MTempLabel.setText("Temperature");
+        getContentPane().add(MTempLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 130, 20));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/icon2.png"))); // NOI18N
+        jLabel9.setText("Zone Mode");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 170, 40));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/icon1.png"))); // NOI18N
+        jLabel7.setText("Menu");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 140, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/low.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/smallSafeWhite.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/BACK.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(canvas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+   
+    
+    private void MSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_MSliderStateChanged
+            int value = MSlider.getValue();
+            System.out.println(value);
+            String z = Integer.toString(value);
+            MainTemp.setText(z);
+//}          
+
+        //System.out.println(((JSlider) evt.getSource()).getValue());
+        
+
+    }//GEN-LAST:event_MSliderStateChanged
+
+    private void TBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TBackActionPerformed
+
+    private void TBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBackMouseClicked
+        this.setVisible(false);
+        new Basic().setVisible(true);
+    }//GEN-LAST:event_TBackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -90,6 +239,28 @@ public class Thermostat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSlider MSlider;
+    private javax.swing.JLabel MTempLabel;
+    private javax.swing.JLabel MainTemp;
+    private javax.swing.JLabel OTemp;
+    private javax.swing.JButton TBack;
+    private java.awt.Canvas canvas1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

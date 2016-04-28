@@ -39,6 +39,7 @@ public class Interface extends javax.swing.JFrame {
         DoNotShowCheck = new javax.swing.JCheckBox();
         IOK = new javax.swing.JButton();
         ICancel = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(400, 150));
@@ -100,10 +101,22 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
-        ICancel.setText("Cancel");
+        ICancel.setText("Logout");
         ICancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ICancelActionPerformed(evt);
+            }
+        });
+
+        jToggleButton1.setText("Check System Status");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
             }
         });
 
@@ -130,7 +143,8 @@ public class Interface extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4)))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jToggleButton1)))
                             .addComponent(DoNotShowCheck))
                         .addGap(193, 193, 193))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -155,13 +169,15 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(TutorialRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jToggleButton1)
+                .addGap(4, 4, 4)
                 .addComponent(DoNotShowCheck)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IOK)
                     .addComponent(ICancel))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,7 +197,8 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_TutorialRadioActionPerformed
 
     private void ICancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ICancelActionPerformed
-        System.exit(0);
+        this.setVisible(false);
+        new Login().setVisible(true);
     }//GEN-LAST:event_ICancelActionPerformed
 
     private void DoNotShowCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoNotShowCheckActionPerformed
@@ -216,6 +233,15 @@ public class Interface extends javax.swing.JFrame {
         new Tutorial().setVisible(true);
             }
     }//GEN-LAST:event_IOKMouseClicked
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        this.setVisible(false);
+        new SysStatus().setVisible(true);
+    }//GEN-LAST:event_jToggleButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -264,5 +290,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

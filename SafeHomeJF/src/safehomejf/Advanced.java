@@ -169,7 +169,7 @@ public class Advanced extends javax.swing.JFrame {
             }
         });
 
-        ACancel.setText("CANCEL");
+        ACancel.setText("BACK");
         ACancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ACancelActionPerformed(evt);
@@ -541,7 +541,8 @@ public class Advanced extends javax.swing.JFrame {
     }//GEN-LAST:event_AGarageActionPerformed
 
     private void ACancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACancelActionPerformed
-        System.exit(0);
+        this.setVisible(false);
+        new Interface().setVisible(true);
     }//GEN-LAST:event_ACancelActionPerformed
 
     private void ASelectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ASelectMouseClicked

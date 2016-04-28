@@ -5,6 +5,8 @@
  */
 package safehomejf;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Benedict
@@ -62,6 +64,9 @@ public class Basic extends javax.swing.JFrame {
         BCameraLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BCameraLabelMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                BCameraLabelMouseReleased(evt);
             }
         });
 
@@ -176,7 +181,9 @@ public class Basic extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BExitActionPerformed
-       System.exit(0);
+      this.setVisible(false);
+            new Interface().setVisible(true);
+            
     }//GEN-LAST:event_BExitActionPerformed
 
     private void BSecurityLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BSecurityLabelMouseClicked
@@ -192,6 +199,8 @@ public class Basic extends javax.swing.JFrame {
     private void BCameraLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BCameraLabelMouseClicked
      this.setVisible(false);
         new Camera().setVisible(true);
+        
+       
     }//GEN-LAST:event_BCameraLabelMouseClicked
 
     private void BThemostatLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BThemostatLabelMouseClicked
@@ -218,6 +227,14 @@ public class Basic extends javax.swing.JFrame {
         this.setVisible(false);
         new Thermostat().setVisible(true);
     }//GEN-LAST:event_BThermostatTextLabelMouseClicked
+
+    private void BCameraLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BCameraLabelMouseReleased
+        
+       
+        
+         
+        
+    }//GEN-LAST:event_BCameraLabelMouseReleased
 
     /**
      * @param args the command line arguments

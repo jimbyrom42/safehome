@@ -56,7 +56,7 @@ public class DBConnection {
                                         ZipCode + "', '" + State + "')");
             
            final JPanel panel = new JPanel();
-            JOptionPane.showMessageDialog(panel, "New user account successfully created", "Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "New user account successfully created", "Successful", JOptionPane.INFORMATION_MESSAGE);
                       
           //Account.setVisible(false);
             //new Login().setVisible(true);}

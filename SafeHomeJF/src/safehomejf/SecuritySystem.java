@@ -27,33 +27,149 @@ public class SecuritySystem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        Stats = new javax.swing.JLabel();
+        Disarm = new javax.swing.JToggleButton();
+        Arm = new javax.swing.JToggleButton();
+        TBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(400, 150));
         setResizable(false);
 
-        jLabel1.setText("Security Sysytems - Coming Soon");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/smallSafeHome.png"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Security System");
+
+        Stats.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Stats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        Disarm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/openArm.png"))); // NOI18N
+        Disarm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DisarmMouseClicked(evt);
+            }
+        });
+        Disarm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisarmActionPerformed(evt);
+            }
+        });
+
+        Arm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/closedArm.png"))); // NOI18N
+        Arm.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ArmStateChanged(evt);
+            }
+        });
+        Arm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ArmMouseClicked(evt);
+            }
+        });
+        Arm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ArmActionPerformed(evt);
+            }
+        });
+
+        TBack.setText("Back");
+        TBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBackMouseClicked(evt);
+            }
+        });
+        TBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 208, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Arm)
+                        .addGap(70, 70, 70)
+                        .addComponent(Disarm)
+                        .addGap(230, 230, 230))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Stats, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(275, 275, 275))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(344, 344, 344)
-                .addComponent(jLabel1)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(289, 289, 289)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(TBack)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Arm)
+                    .addComponent(Disarm))
+                .addGap(30, 30, 30)
+                .addComponent(Stats, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(TBack)
+                .addGap(46, 46, 46))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DisarmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisarmActionPerformed
+        if (Disarm.isSelected())
+            Arm.setSelected(false);
+    }//GEN-LAST:event_DisarmActionPerformed
+
+    private void ArmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArmActionPerformed
+         if (Arm.isSelected())
+            Disarm.setSelected(false);
+    }//GEN-LAST:event_ArmActionPerformed
+
+    private void ArmStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ArmStateChanged
+        
+//}          
+    }//GEN-LAST:event_ArmStateChanged
+
+    private void ArmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArmMouseClicked
+          String value = Arm.getText();
+            System.out.println(value);
+            //String z = Integer.toString(value);
+            Stats.setText("System Armed");
+    }//GEN-LAST:event_ArmMouseClicked
+
+    private void DisarmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DisarmMouseClicked
+         String value = Disarm.getText();
+            System.out.println(value);
+            //String z = Integer.toString(value);
+            Stats.setText("System Disarmed");
+    }//GEN-LAST:event_DisarmMouseClicked
+
+    private void TBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBackMouseClicked
+        this.setVisible(false);
+        new Basic().setVisible(true);
+    }//GEN-LAST:event_TBackMouseClicked
+
+    private void TBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,6 +207,11 @@ public class SecuritySystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Arm;
+    private javax.swing.JToggleButton Disarm;
+    private javax.swing.JLabel Stats;
+    private javax.swing.JButton TBack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

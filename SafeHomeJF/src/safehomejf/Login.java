@@ -155,6 +155,11 @@ public class Login extends javax.swing.JFrame {
            System.out.println("Login is correct"); 
            this.setVisible(false);
             new Interface().setVisible(true);
+            
+            
+            //System.out.println(value);
+            //String z = Integer.toString(value);
+            //Camera.UserInfo().setText(value);
         }
     }//GEN-LAST:event_LoginButtonMouseReleased
 
@@ -202,4 +207,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel UserNameLabel;
     private javax.swing.JTextField UserNameTextPane;
     // End of variables declaration//GEN-END:variables
+
+    void UserNameTextPane() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    String getText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

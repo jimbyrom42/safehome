@@ -5,6 +5,9 @@
  */
 package safehomejf;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Benedict
@@ -27,33 +30,102 @@ public class GarageDoor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        TBack = new javax.swing.JButton();
+        OpenGarage = new javax.swing.JToggleButton();
+        CloseGarage = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(400, 150));
+        setMinimumSize(new java.awt.Dimension(750, 450));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Garage Door - Coming soon");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Garage Door");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(318, 318, 318)
-                .addComponent(jLabel1)
-                .addContainerGap(300, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jLabel1)
-                .addContainerGap(283, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/smallSafeHome.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        TBack.setText("Back");
+        TBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBackMouseClicked(evt);
+            }
+        });
+        TBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+
+        OpenGarage.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        OpenGarage.setText("OPEN");
+        OpenGarage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OpenGarageMouseClicked(evt);
+            }
+        });
+        OpenGarage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpenGarageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(OpenGarage, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        CloseGarage.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        CloseGarage.setText("CLOSE");
+        CloseGarage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CloseGarageMouseClicked(evt);
+            }
+        });
+        CloseGarage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseGarageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CloseGarage, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/png/opencloseGarage.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 740, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void OpenGarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenGarageActionPerformed
+                                                
+       if (OpenGarage.isSelected())
+      CloseGarage.setSelected(false);
+    }//GEN-LAST:event_OpenGarageActionPerformed
+
+    private void CloseGarageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseGarageActionPerformed
+        if (CloseGarage.isSelected())
+            OpenGarage.setSelected(false);
+    }//GEN-LAST:event_CloseGarageActionPerformed
+
+    private void TBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBackMouseClicked
+        this.setVisible(false);
+        new Basic().setVisible(true);
+    }//GEN-LAST:event_TBackMouseClicked
+
+    private void TBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TBackActionPerformed
+
+    private void OpenGarageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OpenGarageMouseClicked
+       final JPanel panel = new JPanel();
+            JOptionPane.showMessageDialog(panel, "Garage Door is Opened", "Success", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_OpenGarageMouseClicked
+
+    private void CloseGarageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseGarageMouseClicked
+        final JPanel panel = new JPanel();
+            JOptionPane.showMessageDialog(panel, "Garage Door is Closed", "Success", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_CloseGarageMouseClicked
 
     /**
      * @param args the command line arguments
@@ -91,6 +163,11 @@ public class GarageDoor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton CloseGarage;
+    private javax.swing.JToggleButton OpenGarage;
+    private javax.swing.JButton TBack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
